@@ -25,6 +25,6 @@ connection {
     port        = 22
     password    = "PG-Key.pem"
     private_key = file("/root/modules/vpc_ec2/PG-Key.pem")
-    host        = aws_instance.ec2_instance.public_ip
+    host        = aws_instance.ec2_instance.public_ip [or] self.public_ip
   }
 }
