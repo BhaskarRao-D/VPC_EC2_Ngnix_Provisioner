@@ -8,6 +8,8 @@ resource "aws_internet_gateway" "IGW" {
 resource "aws_subnet" "publicsubnets" {
   vpc_id     = aws_vpc.Main.id
   cidr_block = "10.0.0.0/24"
+  availability_zone = ""
+  map_public_ip_on_launch = true
 }
 resource "aws_route_table" "PublicRT" {
   vpc_id = aws_vpc.Main.id
